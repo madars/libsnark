@@ -166,7 +166,7 @@ currently provides three options:
         For example, on Fedora 20 at its default settings, you will get the error
         `zmInit ERR:can't protect` when running this code. To solve this,
         run `sudo setsebool -P allow_execheap 1` to allow execution,
-        or use `make CURVE=ALT_BN128` instead.
+        or use `cmake -DCURVE=ALT_BN128` instead.
 
 * "alt_bn128":
    an alternative to "bn128", somewhat slower but avoids dynamic code generation.
@@ -261,6 +261,9 @@ Concretely, here are the requisite packages in some Linux distributions:
 
         $ sudo apt-get install build-essential cmake git libgmp3-dev libprocps3-dev python-markdown libboost-all-dev libssl-dev
 
+* On Debian 10 Buster:
+        $ sudo apt install build-essential cmake git libgmp3-dev libprocps-dev python-markdown libboost-program-options-dev libssl-dev python3 ccache autoconf pkg-config
+
 * On Fedora 21 through 23:
 
         $ sudo yum install gcc-c++ cmake make git gmp-devel procps-ng-devel python2-markdown
@@ -268,6 +271,7 @@ Concretely, here are the requisite packages in some Linux distributions:
 * On Fedora 20:
 
         $ sudo yum install gcc-c++ cmake make git gmp-devel procps-ng-devel python-markdown
+
 
 ### Building
 
