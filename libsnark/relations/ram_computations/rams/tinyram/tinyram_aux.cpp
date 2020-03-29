@@ -180,13 +180,27 @@ tinyram_input_tape tinyram_architecture_params::primary_input_from_boot_trace(co
     const size_t primary_input_base_addr_in_bytes = 1ul << (w - 1);
     const size_t increment = w/8;
 
+#if 0 // ZIRGS
+    printf("latest_double_word = %08lx\n", latest_double_word);
+    printf("primary_input_base_addr_in_bytes = %08lx\n", primary_input_base_addr_in_bytes);
+    printf("increment = %08lx\n", increment);
+    printf("w = %zu\n", w);
+#endif
+
     const size_t input_size = ((latest_double_word & ((1ul << w) - 1)) - primary_input_base_addr_in_bytes)/increment;
     latest_double_word >>= w;
 
     tinyram_input_tape primary_input;
 
+#if 0 // ZIRGS
+    printf("input_size = %zu\n", input_size);
+#endif
+
     for (size_t i = 0; i < (input_size+1)/2; ++i)
     {
+#if 0 // ZIRGS
+        printf("i = %zu\n", i);
+#endif
         primary_input.emplace_back(latest_double_word);
 
         if (i < input_size / 2)
