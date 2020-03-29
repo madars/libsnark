@@ -1,9 +1,0 @@
-store.w 1 0 0 0
-mov 1 0 0 32768
-read 1 1 0 0
-cjmp 1 0 0 28
-add 1 0 0 2
-store.w 0 1 0 0
-jmp 1 0 0 12
-store.w 1 0 0 32768
-answer 1 0 0 0
