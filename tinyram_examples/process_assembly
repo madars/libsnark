@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 import sys
 import re
 
@@ -38,7 +38,7 @@ instruction_types = {
     }
 
 if len(sys.argv) != 4:
-    print "usage: %s <prog.TinyRAM.code.S> <prog.txt> <prog-architecture_params.txt>" % sys.argv[0]
+    print("usage: %s <prog.TinyRAM.code.S> <prog.txt> <prog-architecture_params.txt>" % sys.argv[0])
     sys.exit(1)
 
 def parse_reg(s):
@@ -52,7 +52,7 @@ def parse_arg2(s):
     else:
         return True, int(s)
 
-tinyram_comment_re = re.compile("^; TinyRAM V=1.995 M=vn W=([0-9]+) K=([0-9]+)$")
+tinyram_comment_re = re.compile("^; TinyRAM V=1.996 M=vn W=([0-9]+) K=([0-9]+)$")
 num = 0
 inp = open(sys.argv[1])
 out = open(sys.argv[2], "w")
@@ -65,7 +65,7 @@ if m:
     ap.write("%d %d\n" % (w,k))
     ap.close()
 else:
-    print "Malformed first line (see the spec)"
+    print("Malformed first line (see the spec)")
     sys.exit(1)
 
 lines = []
@@ -84,7 +84,7 @@ for l in inp:
         label, l = l.split(':', 1)
         l = l.strip()
         labels[label] = addr
-        print "label %s corresponds to instruction %d" % (label, addr)
+        print("label %s corresponds to instruction at byte address %d" % (label, addr))
     if l:
         lines.append(l)
         addr += 2 * (w//8)

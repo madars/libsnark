@@ -1,4 +1,4 @@
-; TinyRAM V=1.995 M=vn W=16 K=16
+; TinyRAM V=1.996 M=vn W=16 K=16
 ;;; knapsack
 ;;; primary input: TARGET a_1 a_2 ... a_k
 ;;; auxiliary input: b_k b_{k-1} ... b_1
@@ -8,9 +8,9 @@ store.w 0 r0                    ; I_0:
 mov r0 32768                    ; I_1:
 read r1 0                       ; I_2:
 cjmp 28                         ; I_3:
-add r0 r0 2                     ; I_4:
+add r0 r0 14                    ; I_4:
 store.w r0 r1                   ; I_5:
-jmp 2                           ; I_6:
+jmp 12                          ; I_6:
 store.w 32768 r0                ; I_7: end of prelude
 _loop: cmpe r0 32770            ; I_8:
 cjmp _bail                      ; I_9: bail out if end of input
