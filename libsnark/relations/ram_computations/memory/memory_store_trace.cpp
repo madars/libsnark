@@ -32,6 +32,8 @@ std::map<size_t, address_and_value> memory_store_trace::get_all_trace_entries() 
 
 void memory_store_trace::set_trace_entry(const size_t timestamp, const address_and_value &av)
 {
+    printf("memory_store_trace::set_trace_entry(timestamp = %zu, address = %zu, value = %08lx)\n",
+           timestamp, av.first, av.second);
     entries[timestamp] = av;
 }
 
