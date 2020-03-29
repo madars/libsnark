@@ -38,7 +38,7 @@ instruction_types = {
     }
 
 if len(sys.argv) != 4:
-    print("usage: %s <prog.TinyRAM.code.S> <prog.txt> <prog-architecture_params.txt>" % sys.argv[0])
+    print("usage: %s <prog.s> <prog-processed_assembly.txt> <prog-architecture_params.txt>" % sys.argv[0])
     sys.exit(1)
 
 def parse_reg(s):
