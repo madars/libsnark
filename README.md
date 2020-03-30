@@ -262,7 +262,7 @@ Concretely, here are the requisite packages in some Linux distributions:
         $ sudo apt-get install build-essential cmake git libgmp3-dev libprocps3-dev python-markdown libboost-all-dev libssl-dev
 
 * On Debian 10 Buster:
-        $ sudo apt install build-essential cmake git libgmp3-dev libprocps-dev python-markdown libboost-program-options-dev libssl-dev python3 ccache autoconf pkg-config
+        $ sudo apt install build-essential cmake git libgmp3-dev libprocps-dev python3-markdown libboost-program-options-dev libssl-dev python3 ccache pkg-config
 
 * On Fedora 21 through 23:
 
